@@ -5,7 +5,7 @@ draft: true
 menu:
   main:
     name: Blog
-    identifier: blog
+    identifier:
     weight: 110
     post: From our editor
   footer:
