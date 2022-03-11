@@ -1,0 +1,9 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Acme Corporation"
+theme = "AcmeTheme"
+enableEmoji = true
+enbleGitInfo = true
+
+sectionPagesMenu = "sections"
+paginate = 3

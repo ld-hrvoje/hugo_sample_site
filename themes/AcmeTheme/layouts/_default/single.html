@@ -1,0 +1,21 @@
+{{define "bodyClass"}}
+{{path.Dir .Page.FirstSection.File.Path}} page
+{{end}}
+
+{{define "body"}}
+<main>
+    {{$img := .Resources.GetMatch "cover.*"}}
+    {{if $img}}
+    {{$img = $img.Filter (images.GaussianBlur 6)}}
+        <img src="{{($img.Fill "1920x400").Permalink}}" alt="{{.Title}}" width="1920" height="400" loading="lazy">
+    {{end}}
+    {{with .Title}}
+        <h1>{{.}}</h1>
+    {{end}}
+    {{if .Param "toc"}}
+        <h2>Table Of Contents</h2>
+        {{.TableOfContents}}
+    {{end}}
+    {{.Content}}
+</main>
+{{end}}
