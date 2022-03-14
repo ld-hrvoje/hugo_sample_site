@@ -1,7 +1,7 @@
 ---
 title: "Square License"
 date: 2022-02-08T11:16:10+01:00
-draft: true
+draft: false
 tags: ["shape", "style", "manufacturing"]
 categories: ["square", "general"]
 ---

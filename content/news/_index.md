@@ -1,7 +1,7 @@
 ---
 title: "News"
 date: 2022-02-08T11:15:33+01:00
-draft: true
+draft: false
 menu:
   main:
     name: News

@@ -1,7 +1,7 @@
 ---
 title: "Tropical Triangles"
 date: 2022-02-08T11:13:02+01:00
-draft: true
+draft: false
 tags: ["triangle", "shape", "product"]
 categories: ["shape", "design"]
 ---

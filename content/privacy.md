@@ -1,7 +1,7 @@
 ---
 title: "Privacy Policy"
 date: 2022-02-07T11:20:24+01:00
-draft: true
+draft: false
 menu:
   footer:
     name: Privacy policy

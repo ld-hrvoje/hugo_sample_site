@@ -1,7 +1,7 @@
 ---
 title: "Shaper"
 date: 2022-02-08T11:15:49+01:00
-draft: true
+draft: false
 tags: ["shape", "style", "manufacturing"]
 categories: ["shape", "public"]
 ---

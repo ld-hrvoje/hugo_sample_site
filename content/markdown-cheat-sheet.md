@@ -1,7 +1,7 @@
 ---
 title: "md"
 date: 2022-02-07T11:13:55+01:00
-draft: true
+draft: false
 ---
 
 # Markdown Cheat Sheet

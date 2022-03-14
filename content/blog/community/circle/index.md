@@ -1,7 +1,7 @@
 ---
 title: "Circle"
 date: 2022-02-08T11:09:28+01:00
-draft: true
+draft: false
 tags: ["shape", "product", "circle"]
 categories: ["shape", "public"]
 ---

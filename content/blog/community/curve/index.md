@@ -1,7 +1,7 @@
 ---
 title: "Curve"
 date: 2022-02-08T11:10:00+01:00
-draft: true
+draft: false
 tags: ["shape", "product", "line"]
 categories: ["shape", "public"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Categories"
 date: 2022-02-09T13:27:40+01:00
-draft: true
+draft: false
 menu:
   footer:
     name: Categories

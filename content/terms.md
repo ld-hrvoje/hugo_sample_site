@@ -1,7 +1,7 @@
 ---
 title: "Terms of Use"
 date: 2022-02-07T11:20:40+01:00
-draft: true
+draft: false
 menu:
   footer:
     name: Terms of Use

@@ -1,7 +1,7 @@
 ---
 title: "Building Squares"
 date: 2022-02-08T11:11:51+01:00
-draft: true
+draft: false
 tags: ["square", "shape", "product", "manufacturing"]
 categories: ["shape", "design"]
 ---

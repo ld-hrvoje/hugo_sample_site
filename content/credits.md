@@ -1,7 +1,7 @@
 ---
 title: "Credits"
 date: 2022-02-07T11:17:59+01:00
-draft: true
+draft: false
 menu:
   footer:
     name: Credits

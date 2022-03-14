@@ -1,11 +1,11 @@
 ---
 title: "Blog"
 date: 2022-02-08T11:10:47+01:00
-draft: true
+draft: false
 menu:
   main:
     name: Blog
-    identifier:
+    identifier: blog
     weight: 110
     post: From our editor
   footer:
