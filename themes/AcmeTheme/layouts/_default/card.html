@@ -1,7 +1,4 @@
-<li class="post news-item">
-    <div class="badge">
-        News
-    </div>
+<li class="post">
     {{with (.Resources.GetMatch "cover.*")}}
     <img alt="{{$.Title}}" loading="lazy" src="{{(.Resize "1000x").Permalink}}" />
     {{end}}

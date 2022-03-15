@@ -7,7 +7,7 @@
     <main>
         {{$img := .Resources.GetMatch "cover.*"}}
         {{ if $img }}
-        <img alt="{{.Title}}" width="1920" height="400" loading="lazy" src="{{($img.Fill "1920x400").Permalink}}">
+        <img alt="{{.Title}}" width="1920" height="400" loading="lazy" src="{{($img.Fill " 1920x400").Permalink}}">
         {{ end }}
         {{with .Title}}
         <h1>
@@ -22,6 +22,7 @@
             {{.Content}}
         </div>
     </main>
+
     <aside>
         <section>
             <h2>Information</h2>
@@ -40,7 +41,7 @@
             <h2>Tags</h2>
             {{range .}}
             <p>
-                <a href="{{"/tags/" | relLangURL}}{{. | urlize}}">
+                <a href="{{" /tags/" | relLangURL}}{{. | urlize}}">
                     {{. | humanize}}
                 </a>
             </p>
@@ -49,6 +50,7 @@
         {{end}}
     </aside>
 </div>
+
 {{with site.RegularPages.Related .}}
 <div id="related">
     <h2>Related Pages</h2>
@@ -59,4 +61,7 @@
     </ul>
 </div>
 {{end}}
+
+{{partial "comment.html" (dict "RelPermalink" .Page.RelPermalink "Disabled" ($.Param "CommentDisabled") )}}
+
 {{end}}

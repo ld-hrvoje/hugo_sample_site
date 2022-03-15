@@ -7,6 +7,8 @@ layout: contact
 
 ## Get in touch
 
+---
+
 We pride ourselves on the quality of our work. You can reach us for information about our products, sales, queries, concerns, or feedback.
 
 Acme Corporation,  

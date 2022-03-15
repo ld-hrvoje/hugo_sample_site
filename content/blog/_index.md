@@ -11,6 +11,8 @@ menu:
   footer:
     name: Blog
     weight: 100
+cascade:
+  CommentDisabled: false
 ---
 
 # The Acme Blog
