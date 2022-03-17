@@ -7,5 +7,3 @@ enbleGitInfo = true
 
 sectionPagesMenu = "sections"
 paginate = 3
-
-ignoreErrors = ["error-remote-getjson"]

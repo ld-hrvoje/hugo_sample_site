@@ -23,6 +23,7 @@ testimonials:
       We love what Acme delivers.
 
   - tweet: https://twitter.com/atishay/status/1259605801968128000
+output: [html, json]
 ---
 
 # Acme is the **best**
