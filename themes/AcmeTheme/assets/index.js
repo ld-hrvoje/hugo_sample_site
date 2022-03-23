@@ -3,7 +3,7 @@ function addFormHandler() {
         if (event.target?.dataset?.dynamicForm === undefined) {
             return;
         }
-        event.preventDefault;
+        event.preventDefault();
         const form = event.target;
         const data = new FormData(form);
         const action = form.action;
@@ -15,10 +15,12 @@ function addFormHandler() {
         });
         if (response.ok) {
             form.insertAdjacentHTML('afterend',
-            '<div class="success">The form has been submitted.</div>');
+                document.querySelector(form.dataset.success).innerHTML
+            );
         } else {
             form.insertAdjacentHTML('afterend',
-            '<div class="error">The form could not be submitted. Please try again later.</div>');
+                document.querySelector(form.dataset.error).innerHTML
+            );
         }
         const message = form.nextElementSibling;
         form.reset();
