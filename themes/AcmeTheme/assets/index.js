@@ -1,6 +1,6 @@
 function addFormHandler() {
     document.addEventListener('submit', async event => {
-        if (event.target?.dataset?.dynamicForm === undefined) {
+        if (event.target.dataset.dynamicForm === undefined) {
             return;
         }
         event.preventDefault();
