@@ -1,4 +1,4 @@
-import FormHandler from 'formHandler'
+import FormHandler from './formHandler'
 
 function init() {
     FormHandler.init();
