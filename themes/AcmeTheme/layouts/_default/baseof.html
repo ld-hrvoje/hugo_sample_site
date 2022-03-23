@@ -12,6 +12,8 @@
     {{$css := partialCached "index.css.html" $ "nothing"}}
     <link rel="stylesheet" href="{{$css}}">
     {{$title := default site.Title .Title}}
+    {{$js := resources.Get "index.js" | js.Build (dict "minify" hugo.IsProduction)}}
+    <script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
     {{with $title}}<title>{{.}}</title>{{end}}
 </head>
 

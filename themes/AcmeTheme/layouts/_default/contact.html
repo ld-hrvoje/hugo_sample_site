@@ -3,8 +3,9 @@
 <main>
     {{$img := .Resources.GetMatch "cover.*"}}
     {{ if $img }}
-    <img alt="{{.Title}}" width="1920" height="400" loading="lazy" src="{{($img.Fill "1920x400 Center").Permalink}}">
+    <img alt="{{.Title}}" width="1920" height="400" loading="lazy" src="{{($img.Fill " 1920x400 Center").Permalink}}">
     {{ end }}
+
     {{with .Title}}
     <h1>
         {{.}}
@@ -16,7 +17,18 @@
             {{.Content}}
         </div>
 
-        <form netlify="true" name="Contact">
+        <template id="contact-success">
+            <div class="success">
+                {{default "Thank you for contacting us. You will hear from us soon." ($.Param "contact-success")}}
+            </div>
+        </template>
+        <template id="contact-erorr">
+            <div class="error">
+                {{default "We are facing issue submitting form. Please try again later." ($.Param "contact-error")}}
+            </div>
+        </template>
+
+        <form data-dynamic-form data-success="#contact-success" data-error="#contact error" netlify="true" name="Contact">
             <div>
                 <label for="name">Name:</label>
                 <input id="name" name="name" type="text" required>

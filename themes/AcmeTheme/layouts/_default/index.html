@@ -27,7 +27,7 @@
         <div class="price">$ {{$data.Price}}</div>
         <div class="rating">
           {{range (seq $data.Rating)}}&starf;{{end}}
-          {{- range seq (sub 5 ($data.Rating | int))}}&star;{{end}}
+          {{range seq (sub 5 ($data.Rating | int))}}&star;{{end}}
         </div>
       </a>
     </li>

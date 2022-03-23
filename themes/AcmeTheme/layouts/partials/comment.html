@@ -14,7 +14,14 @@
     {{if .Disabled}}
     <div>Comments have been disabled by the website administrator</div>
     {{else}}
-    <form netlify="true" name="Comments">
+
+    <template id="comment-error">
+        <div class="error">
+            {{default "We are facing an issue submitting the comment. Please try again later." (site.Param "comment-eror")}}
+        </div>
+    </template>
+
+    <form data-dynamic-form data-success="#comment-success" data-error="#comment-error" netlify="true" name="Comments">
         <input type="hidden" name="url" value="{{.RelPermalink}}">
         <div>
             <label for="name">Name:</label>
