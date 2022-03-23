@@ -14,7 +14,12 @@
     {{if .Disabled}}
     <div>Comments have been disabled by the website administrator</div>
     {{else}}
-
+    
+    <template id="comment-success">
+        <div class="success">
+            {{default "Your comment has been successfully submitted for moderation. It will be aveilable on the website soon." (site.Param "comment-success")}}
+        </div>
+    </template>
     <template id="comment-error">
         <div class="error">
             {{default "We are facing an issue submitting the comment. Please try again later." (site.Param "comment-eror")}}
