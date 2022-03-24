@@ -1,7 +1,7 @@
 <div class="comments">
     <h2>Comments</h2>
     {{$comments := dict}}
-    {{$comments = partial "netlifyCommentList.html" .}}
+    {{$comments = partialCached "netlifyCommentList.html" .}}
 
     {{range (index $comments .RelPermalink)}}
         <div class="comment">
