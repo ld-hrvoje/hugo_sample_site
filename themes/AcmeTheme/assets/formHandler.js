@@ -24,8 +24,12 @@ export default {
                 );
             }
             const message = form.nextElementSibling;
-            form.reset();
-            setTimeout(() => message.remove(), 10000);
+            if (REMOVE_FORM_ON_SUBMISSION) {
+                form.remove();
+            } else {
+                form.reset();
+                setTimeout(() => message.remove(), 10000);
+            }
         });
     }
 }
