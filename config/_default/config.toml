@@ -1,7 +1,7 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Acme Corporation"
-theme = "AcmeTheme"
+theme = "github.com/hugoinaction/AcmeTheme"
 enableEmoji = true
 enbleGitInfo = true
 
