@@ -11,3 +11,13 @@ name = "Contact"
 url = "/contact"
 weight = 200
 post = "At your service"
+
+[[footer]]
+name = "Privacy Policy"
+weight = 300
+url = "/privacy"
+
+[[footer]]
+name = "Terms of Use"
+weight = 200
+url = "/terms"

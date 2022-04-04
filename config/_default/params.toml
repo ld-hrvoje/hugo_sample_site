@@ -5,3 +5,10 @@ logo = "/assets/image/logo.png"
 logo_small = "/assets/image/logo.png"
 netlifyCommentForm = "6230753b60f8cf0009ccf4f8"
 RemoveFormOnSubmission = "true"
+
+[TermsAndPrivacy]
+company_name = "Acme Corporation"
+contact_email = "contact@example.org"
+website = "https://hugoinaction.com"
+contact_dpo_email = "dpo@hugoinaction.com"
+contact_dpo_phone = 9_999_999_999
