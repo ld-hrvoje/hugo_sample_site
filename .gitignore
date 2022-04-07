@@ -1,2 +1,5 @@
 public/
 resources/
+/TODO.md
+node_modules
+*.lock
