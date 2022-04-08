@@ -6,7 +6,7 @@ const MAX_SEARCH_RESULTS = 5;
 export default {
     async init() {
         try {
-            const response = await window.fetch(BASE_URL + "/index.json");
+            const response = await window.fetch("/index.json");
             
             if (!response.ok) {
                 this.removeSearch();
