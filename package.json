@@ -2,11 +2,13 @@
   "comments": {
     "dependencies": {},
     "devDependencies": {
+      "@easylogic/editor": "project",
       "fuse.js": "github.com/hugoinaction/AcmeTheme"
     }
   },
   "dependencies": {},
   "devDependencies": {
+    "@easylogic/editor": "0.10.72",
     "fuse.js": "^6.5.3"
   },
   "name": "sample_website",
