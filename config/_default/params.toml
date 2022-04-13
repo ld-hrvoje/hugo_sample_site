@@ -5,7 +5,7 @@ logo = "/assets/image/logo.png"
 logo_small = "/assets/image/logo.png"
 netlifyCommentForm = "6230753b60f8cf0009ccf4f8"
 RemoveFormOnSubmission = "true"
-Latex2Svg = "https://hugosamplesite.netlify.app/.netlify/functions/latex2svg"
+Latex2SvgPath = "/.netlify/functions/latex2svg"
 
 [TermsAndPrivacy]
 company_name = "Acme Corporation"

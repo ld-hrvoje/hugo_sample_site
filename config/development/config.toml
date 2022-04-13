@@ -3,3 +3,4 @@ minify = false
 
 [params]
 DebugMenu = true
+Latex2SvgPath = "/latex2svg"

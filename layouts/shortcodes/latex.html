@@ -1,11 +1,17 @@
-{{/*  a Boolean specifying whether the math is in 
-    display-mode or inline mode */}}
-    {{ $display := true }}
-    {{ with .Get "display" }}{{ $display = . }}{{ end }}
-    
-    {{ if (and site.Params.Latex2Svg (getenv "LATEX2SVG_PASSWORD")) }}
-    {{ $json := getJSON site.Params.Latex2Svg "?" (querify "tex" .Inner) "&password=" (getenv "LATEX2SVG_PASSWORD") "&display=" $display}}
-    {{ with $json.data }}
-    {{. | safeHTML}}
-    {{ end }}
-    {{ end }}
+{{ $display := true }}
+{{ with .Get "display" }}{{ $display = . }}{{ end }}
+
+{{ $latexURL := print .Site.BaseURL site.Params.Latex2SvgPath }}
+
+{{ if .Site.IsServer }}
+{{ $url := urls.Parse .Site.BaseURL }}
+{{ $origin := print $url.Scheme "://" $url.Hostname ":3000" }}
+{{ $latexURL = print $origin site.Params.Latex2SvgPath}}
+{{ end }}
+
+{{ if (and site.Params.Latex2SvgPath (getenv "LATEX2SVG_PASSWORD")) }}
+{{ $json := getJSON $latexURL "?" (querify "tex" .Inner) "&password=" (getenv "LATEX2SVG_PASSWORD") "&display=" $display}}
+{{ with $json.data }}
+{{. | safeHTML}}
+{{ end }}
+{{ end }}
