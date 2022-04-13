@@ -3,12 +3,8 @@
     {{ $display := true }}
     {{ with .Get "display" }}{{ $display = . }}{{ end }}
     
-    {{ if (and site.Params.Latex2Svg 
-            (getenv "LATEX2SVG_PASSWORD") ) }}
-    {{ $json := getJSON site.Params.Latex2Svg "?" 
-        (querify "tex" .Inner) 
-        "&password=" (getenv "LATEX2SVG_PASSWORD") 
-        "&display=" $display}}
+    {{ if (and site.Params.Latex2Svg (getenv "LATEX2SVG_PASSWORD")) }}
+    {{ $json := getJSON site.Params.Latex2Svg "?" (querify "tex" .Inner) "&password=" (getenv "LATEX2SVG_PASSWORD") "&display=" $display}}
     {{ with $json.data }}
     {{. | safeHTML}}
     {{ end }}
