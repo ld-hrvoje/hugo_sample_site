@@ -3,3 +3,4 @@ resources/
 /TODO.md
 node_modules
 *.lock
+/apiKeys.txt

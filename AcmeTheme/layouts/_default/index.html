@@ -2,35 +2,24 @@
 
 {{define "body"}}
 {{$title := default site.Title .Title}}
+
 <section id="hero">
   <img class="hero" src="{{partialCached "hero.svg" $ "nothing" }}" alt="Acme Corporation" width="24rem" />
   <div class="intro">
     {{with $title}}<h1>{{.}}</h1>{{end}}
     {{with .Param "subtitle"}}<h2>{{. | humanize | markdownify}}</h2>{{end}}
-    <a href="{{ref . (.Param "explore")}}">Explore</a>
+    <a href="{{ref . (.Param " explore")}}">Explore</a>
     {{ partialCached "menu.html" (dict "Menu" site.Menus.footer) "footer" }}
   </div>
 </section>
-{{with (partialCached "products.html" "cache")}}
+
+{{with (where site.RegularPages ".Section" "store")}}
 <section id="store">
   <h1>Our Products</h1>
-  <ul>
-    {{range $name, $data := .}}
-    <li>
-      <a href="#">
-        {{$img := resources.GetMatch (print "image/products/" $name ".*") | images.Filter (images.Overlay
-        (resources.GetMatch "image/watermark.*") 0 0 )}}
-        {{$img := $img.Resize "1000x"}}
-        <img src="{{$img.Permalink}}" alt="{{$name}}">
-        <h2>{{$name}}</h2>
-        <div class="price">$ {{$data.Price}}</div>
-        <div class="rating">
-          {{range (seq $data.Rating)}}&starf;{{end}}
-          {{range seq (sub 5 ($data.Rating | int))}}&star;{{end}}
-        </div>
-      </a>
-    </li>
-    {{end}}
+  <ul class="products">
+    {{ range first 5 .}}
+    {{.Render "card"}}
+    {{ end }}
   </ul>
 </section>
 {{end}}
@@ -77,23 +66,24 @@
   <div>
     <ol>
       {{range .}}
-        {{$author := default "" .author}}
-        {{$content := default "" .content}}
-        {{$from := default "" .from}}
-        {{if .tweet}}
-          {{$tweet := getJSON "https://publish.twitter.com/oembed?url=" .tweet "&omit_script=1&hide_media=1&hide_thread=1&dnt=true"}}
-          {{$author = $tweet.author_name }}
-          {{$from = "via Twitter"}}
-          {{$content = $tweet.html }}
-        {{end}}
-        <li>
-            <p>{{$content | safeHTML}}</p>
-            <div>
-              <h2>{{$author | title}}</h2>
-              <h3>{{$from}}</h3>
-            </div>
-        </li>
-        {{end}}
+      {{$author := default "" .author}}
+      {{$content := default "" .content}}
+      {{$from := default "" .from}}
+      {{if .tweet}}
+      {{$tweet := getJSON "https://publish.twitter.com/oembed?url=" .tweet
+      "&omit_script=1&hide_media=1&hide_thread=1&dnt=true"}}
+      {{$author = $tweet.author_name }}
+      {{$from = "via Twitter"}}
+      {{$content = $tweet.html }}
+      {{end}}
+      <li>
+        <p>{{$content | safeHTML}}</p>
+        <div>
+          <h2>{{$author | title}}</h2>
+          <h3>{{$from}}</h3>
+        </div>
+      </li>
+      {{end}}
     </ol>
   </div>
 </section>

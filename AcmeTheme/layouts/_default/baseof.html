@@ -31,6 +31,16 @@
             <div></div>
         </span>
         {{ partialCached "menu.html" (dict "Menu" site.Menus.main "Button" true) "main" }}
+        <span id="cart">
+            <button>Cart
+                <div class="badge"></div>
+            </button>
+            <div>
+                <div class="empty">
+                    Please add some items to the cart.
+                </div>
+            </div>
+        </span>
     </header>
     {{ end }}
 
